@@ -1,13 +1,13 @@
 def citirelista():
-    l=[]
+    lista = []
     sircitit = imput("Dati lista, cu elementele separate prin virgula: ")
     numarinstring = sircitit.split(",")
     for x in numarinstring:
-        l.append(int(x))
-        return l
+        lista.append(int(x))
+        return lista
 
 
-def numar_pare (lst):
+def numar_pare(lst):
     """
     Se determina numarul de numere pare dintr-o lista
     :param lst: lista initiala
@@ -20,11 +20,11 @@ def numar_pare (lst):
     return num
 
 
-def intersectie_liste(lst1, lst2)
+def intersectie_liste(lst1, lst2):
     """
     Determinam intersectia intersectia dintre 2 liste
-    :param lis1: prima lista de intregi
-    :param list2: a doua lista de intregi
+    :param lst1: prima lista de intregi
+    :param lst2: a doua lista de intregi
     :return lst3: alta lista care reprezita intersectia dintre cele 2 liste
     """
     lst3 = [value for value in lst1 if value in lst2]
@@ -44,7 +44,7 @@ def palindrom(element):
     return True
 
 
-def contatenare(num1, num2):
+def concatenare(num1, num2):
     """
     Concateneaza doi intregi, trasnformandu-i in str., si apoi rezultatul inapoi la intreg
     :param num1: primul intreg
@@ -54,3 +54,38 @@ def contatenare(num1, num2):
     intconcatenat = int(str(num1) + str(num2))
     return intconcatenat
 
+
+def list_concatenare(list1, list2):
+    """
+    Concateneaza 2 liste
+    :param list1: prima lista de intregi
+    :param list2: a doua lista de intregi
+    :return listconcat: lista concatenata
+    """
+    listconcat = []
+    if len(list1) > len(list2):
+        maxim = len(list1)
+    else:
+        maxim = len(list2)
+    for i in range(0, maxim):
+        for j in range(0, maxim):
+            if i == j:
+                listconcat.append(concatenare(list1[i], list2[j]))
+    return listconcat
+
+
+def invers(numar):
+    """
+    Se realizeaza inversul unui intreg
+    :param numar: intregul initial
+    :return inv_numar: intregul inversat
+    """
+    inv_numar = 0
+    while numar:
+        cifre = numar % 10
+        inv_numar = inv_numar * 10 + cifre
+        numar /= 10
+    return inv_numar
+
+
+def 
