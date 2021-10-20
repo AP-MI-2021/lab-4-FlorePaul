@@ -31,17 +31,18 @@ def intersectie_liste(lst1, lst2):
     return lst3
 
 
-def palindrom(element):
-    """
-    Determina daca un numar este palindrom
-    :param element: numarul pe care dorim sa il verificam daca este palindrom
-    :return True, daca numarul este un palindrom, False, in caz contrar
-    """
-    n = len(element)
-    for i in range(0, n/2):
-        if element[i] != element[n-i-1]:
-            return False
-    return True
+def palindrom(lst1 ,lst2 ):
+    result = []
+    l1 = len(lst1)
+    l2 = len(lst2)
+    p=0
+    while p < l1 and p<l2:
+        n_str=str(lst1[p])+str(lst2[p])
+        n = int(n_str)
+        if invers(n) == n:
+            result.append(n)
+        p = p + 1
+    return result
 
 
 def concatenare(num1, num2):
@@ -88,4 +89,52 @@ def invers(numar):
     return inv_numar
 
 
-def 
+def div(list1, list2):
+    """
+    Inlocuim toate elementele cu oglinditul lor daca toate elementele sunt divizibile cu toate elemntele din lista a 3-a
+    :param list1: prima lista
+    :param list2: lista a 3-a
+    :return list3: lista rezultata
+    """
+    list3 = []
+    for i in range(0, len(list1)):
+        for j in range(0, len(list2)):
+            if list1[i] % list2[j] == 0:
+                list3.append(invers(list1[i]))
+            else:
+                list3.append(list1[i])
+    return list3
+
+if _main_ == '_main_':
+    final = False
+    while not final:
+        print("1. Citire pentru 2 liste")
+        print("2. Numarul de elemente pare")
+        print("3. Intersectia listelor")
+        print("4. Palindrom")
+        print("5. Cerinta 5")
+        print("x. Iesire din program")
+        optiune = input("Dati obtiunea dorita: ")
+        if optiune == '1':
+            list1 = citirelista()
+            list2 = citirelista()
+        elif optiune == '2':
+            list1 = citirelista()
+            list2 = citirelista()
+            if numar_pare(list1) == numar_pare(list2):
+                print("Listele au numarul de elemente pare egal")
+            else:
+                print("Listele nu au numarul de elemente pare egal")
+        elif optiune == '3':
+            list1 = citirelista()
+            list2 = citirelista()
+            print("Intersectia celor doua liste este: ")
+            print(intersectie_liste(list1, list2)
+        elif optiune == '4':
+            list1 = citirelista()
+            list2 = citirelista()
+            print(palindrom(list1, list2))
+        elif option == 'x':
+            finish = True
+        else:
+            print("Optiunea nu este valida")
